@@ -1,12 +1,13 @@
 import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, View } from 'react-native'
 import TrackListItem from './TrackListItem';
 
-const TrackList = ({ list }) => {    
+const TrackList = (props) => { 
+    const {list} = props
     return(
         <ScrollView style={styles.container}>
         {
-            (Object.keys(list).length !== 0) && list.map(item => <TrackListItem key={item.id} track={item} />) 
+            (Object.keys(list).length !== 0) && list.map(item => <TrackListItem key={item.id} track={item} {...props} />) 
         }
         </ScrollView>
     )

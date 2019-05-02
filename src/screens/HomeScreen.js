@@ -23,7 +23,7 @@ class HomeScreen extends Component {
         return(
             <View style={styles.container}>
                 <SearchBox handleSearchBoxSubmit={this.handleSearchBoxSubmit} />
-                <TrackList list={this.state.data} />
+                <TrackList list={this.state.data} {...this.props}/>
             </View>
         )
     }
